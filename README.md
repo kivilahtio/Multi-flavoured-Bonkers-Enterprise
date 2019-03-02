@@ -25,6 +25,7 @@ dzil smoke
 
 ```
 perl -Ilib -I. bin/bonkers.pl
+prove -Ilib -I. t
 ```
 
 ## Worklogs

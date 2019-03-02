@@ -1,5 +1,7 @@
 package Bonkers;
 
+# ABSTRACT: turns Crackers into gold
+
 use Bonkers::Pragmas;
 
 use Bonkers::Cracker;

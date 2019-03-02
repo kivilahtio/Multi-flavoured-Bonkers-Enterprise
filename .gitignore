@@ -6,6 +6,9 @@
 *.o
 *.pm.tdy
 *.bs
+*.swp
+.vstags
+.vscode
 
 # Devel::Cover
 cover_db/
@@ -33,3 +36,7 @@ inc/
 /MANIFEST.bak
 /pm_to_blib
 /*.zip
+
+#Release sources
+^Bonkers*
+
