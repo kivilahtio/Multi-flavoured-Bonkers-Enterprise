@@ -1,0 +1,15 @@
+Worklog:
+
+9:20 - started working. Studying the problem. Setting up project infrastructure, github, logger, pragmas, tests, bin, packaging.
+
+10:20 - Base infra kinda ok. Starting to work with the business problem.
+11:25 - Initial happy path test case complete
+12:05 - Scaffolded the OO code to compile the test case.
+
+LUNCH
+
+12:31 - Implemented the solution. Tuning logging and reporting. Testing various approaches with different amounts of finesse.
+17:07 - All tests pass ! :D
+
+BREAK
+
