@@ -57,6 +57,12 @@ sub status($self, $status=undef) {
   return $self->{status};
 }
 
+=head2 report
+
+ @returns {HASHRef of Strings} Format the internal state as a flat dumpable report.
+
+=cut
+
 sub report($self) {
   my %report = %$self{@reportAttributes};
   $report{box} = ($report{box}) ? $report{box}->colour : '';

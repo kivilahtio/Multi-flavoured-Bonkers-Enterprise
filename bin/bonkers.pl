@@ -41,6 +41,7 @@ PARAMETERS
 
   -i --crackers Integer
         How many Crackers to produce before stopping the simulation?
+        0 causes an Crackers to me manufactured until SIGINT (Ctrl-C) is given.
 
   -v level
         Verbose output to the STDOUT,
@@ -59,18 +60,18 @@ HELP
 
 unless ($args{colours}) {
   $args{colours}     = prompt_string("Please pass a list of colours for the Cracker factory production line:").'';
-  $args{colours} = split(/\W+/, $args{colours});
+  $args{colours} = \@{[split(/\W+/, $args{colours})]};
 }
 
 unless ($args{gifts}) {
   $args{gifts}     = prompt_string("Please pass a list of gifts for the Cracker factory production line:").'';
-  $args{gifts} = split(/\W+/, $args{gifts});
+  $args{gifts} = \@{[split(/\W+/, $args{gifts})]};
 }
 
-unless ($args{crackers}) {
+unless (defined $args{crackers}) {
   $args{crackers} = prompt_integer("Please tell me how many Crackers to manufacture. Enter 0 to enter the infinite loop!:")+0;
-  $args{crackers} = undef if ($args{crackers} == 0);
 }
+$args{crackers} = undef if ($args{crackers} == 0);
 
 my $bonkers = Bonkers->new(\%args);
 $bonkers->bonkThemAway();

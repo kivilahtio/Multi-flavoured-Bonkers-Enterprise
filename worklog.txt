@@ -1,5 +1,7 @@
 Worklog:
 
+2019-03-02
+
 9:20 - started working. Studying the problem. Setting up project infrastructure, github, logger, pragmas, tests, bin, packaging.
 
 10:20 - Base infra kinda ok. Starting to work with the business problem.
@@ -10,6 +12,14 @@ LUNCH
 
 12:31 - Implemented the solution. Tuning logging and reporting. Testing various approaches with different amounts of finesse.
 17:07 - All tests pass ! :D
+17:14 - dzil works the minimum to be able to test.
 
-BREAK
+2019-03-03
 
+9:52 - Check for bugs and documentation. Domain language check.
+10:21 - Pushed to github.
+10:45 - Notified stakeholders.
+
+
+Total time spent:
+~ 7:45h

@@ -14,9 +14,16 @@ sub new($class, $params) {
   return bless($params, $class);
 }
 
+=head2 assemble
+
+The Worker assembles the Cracker and has the Cracker at hand, ready for dispatch.
+
+ @returns {Bonkers::Cracker}
+
+=cut
+
 sub assemble($self) {
-  return $self->crackerAtHand(shift(@{$self->feed()})) if ($self->feed);
-  return $self->crackerAtHand($self->getNewCracker());
+  return $self->crackerAtHand( $self->_getNewCracker );
 }
 
 =head2 dispatch
@@ -34,19 +41,27 @@ sub dispatch($self) {
   return $self;
 }
 
-=head2 getNewCracker
+=head2 _getNewCracker
 
  @returns {Bonkers::Cracker} A random Cracker from the given colours and gifts,
                              or the next Cracker from a predetermined feed of Crackers.
 
 =cut
 
-sub getNewCracker($self) {
-  my $randColour = $self->colours()->[ rand(scalar(@{$self->colours})) ];
-  my $randGift =   $self->gifts()->[   rand(scalar(@{$self->gifts})) ];
-  my $cracker = Bonkers::Cracker->new({colour => $randColour, gift => $randGift});
+sub _getNewCracker($self) {
+  my $cracker;
 
-  $logger->trace(np($cracker)) if $logger->is_trace();
+  if ($self->feed) { #Crackers from a given test feed.
+    $cracker = shift(@{$self->feed()});
+    $logger->trace('Cracker from a feed: '.np($cracker)) if $logger->is_trace();
+  }
+  else {
+    my $randColour = $self->colours()->[ rand(scalar(@{$self->colours})) ];
+    my $randGift =   $self->gifts()->[   rand(scalar(@{$self->gifts})) ];
+    $cracker = Bonkers::Cracker->new({colour => $randColour, gift => $randGift});
+    $logger->trace('Cracker from the void: '.np($cracker)) if $logger->is_trace();
+  }
+
   return $cracker;
 }
 

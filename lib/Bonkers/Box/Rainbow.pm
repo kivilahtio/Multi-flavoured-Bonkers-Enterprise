@@ -27,7 +27,9 @@ sub new($class) {
 
 =head2 place
 
-See Bonkers::Box::place()
+Same signature as the superclass' Bonkers::Box::place()
+
+ @throws die when the Cracker cannot be put to the Box.
 
 =cut
 

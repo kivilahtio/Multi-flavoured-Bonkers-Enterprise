@@ -31,7 +31,7 @@ Place a Cracker into this Box.
 
  @param {Bonkers::Cracker} Cracker to put in
  @returns {Bonkers::Box} This Box
- @dies if cannot place a Cracker in.
+ @throws die if cannot place a Cracker in.
 
 =cut
 
@@ -53,7 +53,7 @@ sub crackers($self) { return $self->{crackers}; }
 
 =head2 report
 
-  @returns {ARRAYRef of Strings} Condensed representation of all the Crackers in this box.
+  @returns {ARRAYRef of Bonkers::Cracker->report()} Condensed representation of all the Crackers in this box.
 
 =cut
 

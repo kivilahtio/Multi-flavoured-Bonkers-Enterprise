@@ -37,6 +37,12 @@ sub new($class, $parameters) {
   return $self;
 }
 
+=head2 bonkThemAway
+
+Runs the business simulation.
+
+=cut
+
 sub bonkThemAway($self) {
   $self->{worker} = Bonkers::Worker->new({colours => $self->{colours}, gifts => $self->{gifts}});
   $self->{packer} = Bonkers::Packer->new({colours => $self->{colours}, worker => $self->{worker}});
@@ -63,10 +69,10 @@ sub bonkThemAway($self) {
 sub addCrackerToHistory($self, $cracker, $exception=undef) {
   if ($exception) {
     if ($exception =~ /^Colour/) {
-      $cracker->status('Colour blocked');
+      $cracker->status('Colour already exists');
     }
     elsif ($exception =~ /^Gift/) {
-      $cracker->status('Gift blocked');
+      $cracker->status('Gift already exists');
     }
     elsif ($exception =~ /^Box/) {
       $cracker->status('Box missing');

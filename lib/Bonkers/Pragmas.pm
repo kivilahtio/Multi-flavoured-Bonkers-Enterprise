@@ -8,7 +8,7 @@ Bonkers::Pragmas
 
 !!Copypaste from a previous project!!
 
-Shared pargmas and modules for all Bonkers modules.
+Shared pragmas and modules for all Bonkers modules.
 
 =cut
 

@@ -38,5 +38,5 @@ inc/
 /*.zip
 
 #Release sources
-^Bonkers*
+Bonkers-*
 

@@ -31,7 +31,7 @@ sub get {
 }
 
 # Automatically init the Log::Log4perl subsystem on first module load/use.
-# Differentiate from program output, so we can capture STDOUT as the result, and STDERR as logging/debugging
+# Differentiate logging from the program output, so we can capture STDOUT as the result, and STDERR as logging/debugging
 my $conf = q(
   log4perl.rootLogger = INFO, SCREEN
 
